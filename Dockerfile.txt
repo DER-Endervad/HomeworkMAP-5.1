@@ -1,0 +1,7 @@
+FROM ubuntu:latest
+	LABEL mantainer="derendervad@gmail.com"
+	RUN apt-get update && apt-get -y install g++ nano net-tools inetutils-ping
+	WORKDIR /root/Homework_5.1
+	COPY Homework_5.1.cpp . 
+	RUN g++ Homework_5.1.cpp -o docker_hello
+	CMD ["./docker_hello"] 
